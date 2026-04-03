@@ -18,6 +18,17 @@ export default defineConfig({
     environment: "node",
     include: ["**/*.test.ts"],
     passWithNoTests: true,
+    // In CI, emit JUnit XML and JSON reports so results can be uploaded as artifacts.
+    // Locally, only the default reporter is used to keep output readable.
+    reporters: process.env.CI
+      ? ["verbose", "junit", "json"]
+      : ["verbose"],
+    outputFile: process.env.CI
+      ? {
+          junit: "./test-results/junit.xml",
+          json: "./test-results/results.json",
+        }
+      : undefined,
     coverage: {
       provider: "istanbul",
       reporter: ["text", "json", "html"],

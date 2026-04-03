@@ -8,7 +8,11 @@ mastra.db*
 
 **/.DS_Store
 
-test-results/
+# Ignore generated test results but keep the root README documenting the storage strategy
+test-results/**
+!test-results/README.md
+# Ignore package-level test-results directories (created by vitest JUnit/JSON reporters in CI)
+**/test-results/
 
 **/target
 .nx/cache
