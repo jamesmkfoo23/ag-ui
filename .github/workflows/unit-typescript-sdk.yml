@@ -62,5 +62,30 @@ jobs:
       - name: Test Build
         run: pnpm run build
 
-      - name: Run tests
-        run: pnpm run test
+      - name: Run tests with coverage
+        run: pnpm run test:coverage
+
+      - name: Upload test results (JUnit XML)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit-test-results
+          path: |
+            sdks/typescript/packages/*/test-results/junit.xml
+            sdks/typescript/packages/*/test-results/results.json
+            integrations/**/test-results/junit.xml
+            integrations/**/test-results/results.json
+            middlewares/**/test-results/junit.xml
+            middlewares/**/test-results/results.json
+          retention-days: 90
+
+      - name: Upload coverage reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit-coverage-reports
+          path: |
+            sdks/typescript/packages/*/coverage/
+            integrations/**/coverage/
+            middlewares/**/coverage/
+          retention-days: 30
