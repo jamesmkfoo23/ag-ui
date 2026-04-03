@@ -13,7 +13,7 @@
     "@ag-ui/client": "workspace:*",
     "@ag-ui/core": "workspace:*",
     "@ag-ui/mcp-a2ui-middleware": "workspace:*",
-    "next": "16.0.10",
+    "next": "16.0.11",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
     "rxjs": "7.8.1",
