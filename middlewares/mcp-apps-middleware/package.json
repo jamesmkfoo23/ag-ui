@@ -25,7 +25,7 @@
     "unlink:global": "pnpm unlink --global"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.0.0"
+    "@modelcontextprotocol/sdk": "^1.26.0"
   },
   "peerDependencies": {
     "@ag-ui/client": ">=0.0.40",
