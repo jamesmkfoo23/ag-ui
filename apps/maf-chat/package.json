@@ -1,0 +1,28 @@
+{
+  "name": "maf-chat",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "clean": "git clean -fdX --exclude=\"!.env\""
+  },
+  "dependencies": {
+    "@ag-ui/client": "workspace:*",
+    "@ag-ui/core": "workspace:*",
+    "@ag-ui/mcp-a2ui-middleware": "workspace:*",
+    "next": "16.0.10",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "rxjs": "7.8.1",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "typescript": "^5"
+  }
+}
